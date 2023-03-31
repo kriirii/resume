@@ -1,0 +1,91 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    {{#with main}}
+    <main>
+        <section>
+                {{> title data="Work history" big=true}}
+            <div>
+                <ul>
+                {{#each works}}
+                <li> 
+                   <div>{{position}}</div> 
+
+                   <br>
+
+                    <div>{{duration.from}} - 
+                        {{#if duration.to }}
+                            {{duration.to}}
+                        {{else}} 
+                            (працюю в данний час)
+                         {{/if}}
+                    </div> 
+
+                    <br>
+                        {{#if company.url}}
+                         <div>{{> link text=company.name href=company.url blank=true noline=true }}</div> 
+                        {{else}}
+                        <div><b>{{company.name}}</b></div>
+                        
+                        {{/if}}
+                    <br>
+                    <div><strong>Projects ({{projectAmount}})</strong></div>
+
+                    <br>
+
+                    <ul>
+                        {{#each projects}}
+                            <li> 
+                                <div>{{> link text=name href=url blank=true noline=true }}</div> 
+                                <div><br></div>
+                                <div><p>{{about}}</p></div>
+                                <br>
+
+                                <div class="stacks">
+                                 <em>Project stacks: ({{stackAmount}})</em>
+                                <br>
+                                <br>
+                                <ul>
+                                {{#each stacks}}
+                                <li>
+                                    <div>{{name}} - {{about}} - {{> link text=url href=url blank=true noline=true }}</div>
+                                </li> 
+                                 {{/each}}
+                                </div>
+                                <br>
+                                <div class="awards">
+                               <br>
+                                <em>Project awards:({{awardAmount}})</em>
+                                <br>
+                                <br>
+
+                                <ul>
+                                {{#each awards}}
+                                <li>
+                                    <div>{{name}}</div>
+                                </li>
+                                
+                                    {{/each}}
+                                    </ul>
+                              </div>
+                            </li>   
+                            <br>
+                            {{/each}}
+                        </ul>
+                    </li>
+                    <br>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+    </main>
+    {{/with}}
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
