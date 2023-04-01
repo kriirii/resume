@@ -7,41 +7,41 @@
     {{#with main}}
     <main>
         <section>
-             {{> title data="All skils"}}
+            {{> title data="All skils"}}
             <ul>
-            {{#each skills}}
+                {{#each skills}}
                 <li>
                     {{name}}
 
                     {{#if point includeZero=true}} ({{point}}) {{/if}}
-                    {{#if isTop}} (TOP) {{/if}}
+                    {{#if isTop}} (1234) {{/if}}
 
                     {{#unless point includeZero=true}} (не вивчаємо) {{/unless}}
 
                     {{#unless point}}
-                        {{#if point includeZero=true}}
-                        (зараз вивчаємо)
-                        {{/if}}
+                    {{#if point includeZero=true}}
+                    (зараз вивчаємо)
+                    {{/if}}
                     {{/unless}}
                 </li>
-            {{/each}}
+                {{/each}}
             </ul>
         </section>
-        
+
         <section>
-              {{> title data="All hobbies"}}
-              {{#each hobbies}}
-               <li>
-                    {{name}}{{#if isMain}} (MAIN) {{/if}}
-                </li>
-                {{/each}}
+            {{> title data="All hobbies"}}
+            {{#each hobbies}}
+            <li>
+                {{name}}{{#if isMain}} (MAIN) {{/if}}
+            </li>
+            {{/each}}
         </section>
         <section>
-              {{> title data="My hobbies"}}
+            {{> title data="My hobbies"}}
             <ol>
-              {{#each hobbies}}
-               <li>
-                 {{name}}{{#if isMain}} (FAVORITE) {{/if}}
+                {{#each hobbies}}
+                <li>
+                    {{name}}{{#if isMain}} (FAVORITE) {{/if}}
                 </li>
                 {{/each}}
             </ol>
