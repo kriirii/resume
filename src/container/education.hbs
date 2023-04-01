@@ -7,22 +7,22 @@
     {{#with main}}
     <main>
         <section>
-             {{> title data="My education" big=true}}
+            {{> title data="My educations:" big=true}}
             <ul>
-            {{#each education}}
+                {{#each education}}
                 <li>
                     {{name}}
-                   {{#if isEnd incudeZero=false}} (ще в процесі) {{/if}}</li>
-            {{/each}}
+                    {{#if isEnd incudeZero=false}} (ще в процесі) {{/if}}</li>
+                {{/each}}
             </ul>
             <section>
-             {{> title data="My certificates"}}
-                 <ul>
-                   {{#each certificates}}
+                {{> title data="My certificates"}}
+                <ul>
+                    {{#each certificates}}
                     <li id="{{id}}">{{name}}</li>
-                    {{/each}} 
-                 </ul>
-        </section>
+                    {{/each}}
+                </ul>
+            </section>
     </main>
     {{/with}}
 </div>
