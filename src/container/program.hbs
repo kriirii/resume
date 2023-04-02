@@ -1,0 +1,99 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div class="program">
+    <h1>{{program.excursion.name}}</h1>
+    <div class="location">
+        <p>{{program.excursion.location.city}}, {{program.excursion.location.country}}</p>
+    </div>
+    <div class="date">
+        <p>{{program.excursion.date}}</p>
+    </div>
+    {{#each program.excursion.program}}
+    <hr>
+    <br>
+
+    <div class="event">
+
+        <h2>{{name}}:</h2>
+        <div class="type">
+            <p>{{type}}</p>
+        </div>
+        <div class="duration">
+            <p>({{duration}} hours)</p>
+        </div>
+        {{#if details.museum}}
+        <div class="museum">
+            <ul>
+                <li>
+                    <h3>{{details.museum.name}}</h3>
+                    <div class="location">
+                        <p>{{details.museum.location.address}}, {{details.museum.location.city}},
+                            {{details.museum.location.country}}</p>
+                    </div>
+                </li>
+                <br>
+                {{#each details.museum.exhibits}}
+                <div class="exhibit">
+                    <br>
+                    <li>
+                        <h4>{{name}}</h4>
+                        {{#if artist}}
+                        <p>(By {{artist}})</p>
+                        {{else}}
+                        <p>(Artist unknown)</p>
+                        {{/if}}
+                        <p>{{description}}</p>
+                        {{#if audio_guide}}
+                        <p>Audio guide available</p>
+                        {{/if}}
+                    </li>
+                </div>
+
+                {{/each}}
+        </div>
+        {{/if}}
+        </ul>
+
+        <br>
+        {{#if details.venue}}
+        <div class="venue">
+
+            <ul>
+                <li>
+                    <h3>{{details.venue.name}}</h3>
+                    <div class="location">
+                        <p>{{details.venue.location.address}}, {{details.venue.location.city}},
+                            {{details.venue.location.country}}</p>
+                    </div>
+                </li>
+            </ul>
+            <br>
+
+            {{#each details.performers}}
+            <ul>
+                <li>
+                    <div class="performer">
+
+                        <h4>{{name}}</h4>
+                        <p>{{type}}</p>
+                </li>
+
+            </ul>
+        </div>
+
+        <br>
+        {{/each}}
+    </div>
+    {{/if}}
+    <div class="guide">
+
+        <h3>Guide</h3>
+
+        <p>{{details.guide.name}} ({{details.guide.language}}) - {{details.guide.rating}}/5</p>
+    </div>
+</div>
+{{/each}}
+</div>
