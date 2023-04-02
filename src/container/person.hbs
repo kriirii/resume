@@ -1,0 +1,95 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    {{#with person}}
+    <section>
+        <div>
+            <h1>{{name}}</h1>
+            <p>Age: {{age}}</p>
+            <p>Gender: {{gender}}</p>
+            <p>Address: {{address.street}}, {{address.city}}, {{address.state}} {{address.zip}}, {{address.country}}</p>
+        </div>
+    </section>
+
+    <hr>
+
+    <h2>Education:</h2>
+    <ul>
+        {{#each education}}
+        <li>{{degree}} in {{major}} from {{university}} ({{graduationYear}})</li>
+        {{/each}}
+    </ul>
+    <hr>
+
+    <h3>Work Experience: </h3>
+    <ul>
+        {{#each workExperience}}
+        <li>
+            <h4> {{title}} at {{company}} ({{startDate}} to {{endDate}})</h4>
+            <dev>{{responsibilities}}</dev>
+            <br>
+            <h4>Employer Information: </h4>
+            <ul>
+                <li>Year founded: {{year_founded}}</li>
+                <li>Industry: {{industry}}</li>
+            </ul>
+            <h5>Team Information: </h5>
+            <ul>
+                {{#each employees}}
+                <div>{{name}}, {{position}} {{department}}</div>
+                {{#each projects}}
+                <br>
+                <div>
+                    <p><b>{{name}}</b> ({{status}})</p>
+                    {{description}}</p>
+                </div>
+
+                <br>
+                {{#each teams}}
+
+                <div><b>{{team_name}}</b></div>
+                <ul>
+                    <li>
+                        <p>{{team_leader.title}} - {{team_leader.name}}/{{team_leader.email}}</p>
+                    </li>
+                    <li>{{#each team_members}}
+                        <div>{{name}} - {{title}}/{{email}}</div>
+                    </li>
+                    <br>
+                    <div> Skills: {{skills}}</div>
+                </ul>
+                <br>
+
+                {{#each projects}}
+                <div>
+                    <p><b>{{name}}</b></p>
+                    <p><q>{{description}}</q></p>
+                </div>
+
+                <p> Technologies used: {{#each technologies}}{{this}}, {{/each}}</p>
+                <p>Team Members:</p>
+                <ul>
+                    {{#each team_members}}
+                    <li>{{name}}, {{title}}</li>
+                    {{/each}}
+                </ul>
+                {{/each}}
+                {{/each}}
+            </ul>
+            {{/each}}
+            {{/each}}
+        </li>
+        {{/each}}
+    </ul>
+    </li>
+    {{/each}}
+    </ul>
+</div>
+{{/with}}
+</div>
+</body>
+
+</html>
