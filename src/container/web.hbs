@@ -1,0 +1,86 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+
+    <div class="languages">
+
+        {{#each web.languages}}
+        <div class="language">
+            <hr>
+            <strong>
+                <h2>{{this.name}}</h2>
+            </strong>
+            <p>{{this.description}}</p>
+            {{#if this.version}}
+            <p>Version: {{this.version}}</p>
+            {{/if}}
+            {{#if this.elements}}
+            <br>
+            <h3>HTML Elements:</h3>
+            <ul>
+                {{#each this.elements}}
+                <li>
+                    <h4>{{this.name}}</h4>
+                    <p>{{this.description}}</p>
+                    {{#if this.attributes}}
+                    <ul>
+                        {{#each this.attributes}}
+                        <li>
+                            <p>{{this.name}} - {{this.description}}</p>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                </li>
+                {{/each}}
+            </ul>
+            {{/if}}
+            {{#if this.properties}}
+            <br>
+            <h3>CSS Properties:</h3>
+            <ul>
+                {{#each this.properties}}
+                <li>
+                    <h4>{{this.name}}</h4>
+                    <p>{{this.description}}</p>
+                    {{#if this.values}}
+                    <ul>
+                        {{#each this.values}}
+                        <li>
+                            <p>{{this.value}} - {{this.description}}</p>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                </li>
+                {{/each}}
+            </ul>
+            {{/if}}
+            {{#if this.functions}}
+            <br>
+            <h3>JavaScript Functions:</h3>
+            <ul>
+                {{#each this.functions}}
+                <li>
+                    <h4>{{this.name}}</h4>
+                    <p>{{this.description}}</p>
+                    {{#if this.parameters}}
+                    <ul>
+                        {{#each this.parameters}}
+                        <li>
+                            <p>{{this.name}} ({{this.type}})- {{this.description}}</p>
+                        </li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                </li>
+                {{/each}}
+            </ul>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+</div>
