@@ -1,0 +1,67 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<!DOCTYPE html>
+<html>
+
+<h1>{{name}}</h1>
+<hr>
+<h2>Users:</h2>
+<ul>
+    {{#each users}}
+    <ol>
+        <b>{{this.name}}</b> ({{this.gender}}, {{this.age}} years old)
+    </ol>
+
+    <hr>
+    {{#if this.friends.length}}
+    <h3>Friends:</h3>
+    <ul>
+        {{#each this.friends}}
+        <ol> {{this.name}} ({{this.gender}},
+            {{this.age}} years old)
+        </ol>
+        <br>
+        <ol>
+            {{#if this.mutual_friends.length}}
+        </ol>
+        <br>
+
+        <ol><b>Mutual friends:</b></ol>
+        <br>
+        <ul>
+
+            {{#each this.mutual_friends}}
+
+            <p>{{this.name}} ({{this.gender}}, {{this.age}} years old)</p>
+            {{/each}}
+        </ul>
+        {{/if}}
+        </li>
+        {{/each}}
+    </ul>
+    {{/if}}
+    <hr>
+
+    {{#if this.groups.length}}
+    <h3>Groups:</h3>
+    <br>
+    <ul>
+        {{#each this.groups}}
+        <br>
+        <b>{{this.name}}</b>- {{this.description}}<br>
+        {{#if this.members.length}}
+        <b>Members:</b>
+        <br>
+        {{#each this.members}}
+        {{this.name}}<br>({{this.gender}},{{this.age}} years old)
+        {{/each}} <br>
+        {{/if}}
+        {{/each}}
+    </ul>
+
+    {{/if}}
+    {{/each}}
+
+</ul>
