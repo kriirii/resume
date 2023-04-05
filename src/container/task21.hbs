@@ -1,25 +1,23 @@
 <main>
     <div class="card">
         <div class="card-body">
-
             <div class="card">
-                <div class="card-body"> {{!якщо не буде цього рядка контент прижимається до краю }}
+                <div class="card-body">
                     <div class="main-heading">
                         <h1>{{heading.main.title}}</h1>
                         <p>{{heading.main.text}}</p>
                     </div>
                     <button class="btn btn-primary">{{heading.main.button_text.solid}}
-                    </button>{{!звичайна кнопка синя головна}}
+                    </button>
                     <br>
                     <br>
                     <button class="btn btn-outline-primary">{{heading.main.button_text.outline}}</button>
-                    {{! другорядна але основна. прозора кнопка синя рамка і текст ( при наведенні зафарб.)}}
                 </div>
             </div>
             <br>
 
             <div class="card">
-                <div class="card-body"> {{!якщо не буде цього рядка контент прижимається до краю }}
+                <div class="card-body">
                     <div class="second-heading">
                         <h2>{{heading.second.title}}</h2>
                         <p>{{heading.second.text}}</p>
@@ -34,7 +32,7 @@
             <br>
 
             <div class="card">
-                <div class="card-body"> {{!якщо не буде цього рядка контент прижимається до краю }}
+                <div class="card-body">
                     <div class="subblock">
                         <h3>{{heading.subblock.title}}</h3>
                         <p>{{heading.subblock.text}}</p>
@@ -54,11 +52,11 @@
 
     <div class="card">
         <div class="card-body">
-            <h1>{{nested_display.title}}</h1>
+            <div class="display-1">{{nested_display.title}}</div>
             <div class="card">
                 <div class="card-body">
                     <div class="subblock">
-                        <h4>{{nested_display.children_display.title}}</h4>
+                        <div class="display-4">{{nested_display.children_display.title}}</div>
                         <p>{{nested_display.children_display.text}}</p>
                         <button class="btn btn-outline-warning">{{heading.subblock.button_text.solid}}</button>
 
@@ -81,16 +79,20 @@
             <h6 class="text-uppercase">{{paragraph.title}}</h6>
             <br> {{paragraph.text}}
             <br>
+
             <br>
             <a href="{{paragraph.button.url}}">{{paragraph.button.text}}</a>
             <br>
             <br>
-
-            <ul>
-                {{#each paragraph.list_name}}
-                <li><a href="{{this.url}}">{{this.text}}</a></li>
-                {{/each}}
-            </ul>
+            <div class="card">
+                <div class="card-body">
+                    <ul>
+                        {{#each paragraph.list_name}}
+                        <li><a href="{{this.url}}">{{this.text}}</a></li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </main>
