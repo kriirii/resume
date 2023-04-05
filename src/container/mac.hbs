@@ -1,0 +1,109 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{name}}</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+
+<body>
+    <h1>{{name}}</h1>
+    <p>{{description}}</p>
+    <p>Price: ${{price}}</p>
+    <p>Category: {{category}}</p>
+    <hr>
+    <h2>Features:</h2>
+    <ul>
+        <li><b>Processor:</b></li>
+        <br>
+        <ul>
+            <li>Brand: {{features.processor.brand}}</li>
+            <li>Model: {{features.processor.model}}</li>
+            <li>Speed: {{features.processor.speed}}</li>
+            <li>Cores: {{features.processor.cores}}</li>
+            <li>Cache: {{features.processor.cache}}</li>
+        </ul>
+        <br>
+        <hr>
+        <li><b>Memory:</b></li>
+        <br>
+        <ul>
+            <li>Type: {{features.memory.type}}</li>
+            <li>Size: {{features.memory.size}}</li>
+            <li>Speed: {{features.memory.speed}}</li>
+        </ul>
+        <br>
+        <hr>
+        <li><b>Storage:</b></li>
+        <br>
+        <ul>
+            <li>Type: {{features.storage.type}}</li>
+            <li>Size: {{features.storage.size}}</li>
+        </ul>
+        <br>
+        <hr>
+        <li><b>Display:</b></li>
+        <br>
+        <ul>
+            <li>Size: {{features.display.size}}</li>
+            <li>Resolution: {{features.display.resolution}}</li>
+            <li>Technology: {{features.display.technology}}</li>
+            <li>Color Space: {{features.display.color_space}}</li>
+            <li>Brightness: {{features.display.brightness}}</li>
+            <li>Refresh Rate: {{features.display.refresh_rate}}</li>
+        </ul>
+        <br>
+        <hr>
+        <li><b>Graphics:</b></li>
+        <br>
+        <ul>
+            <li>Brand: {{features.graphics.brand}}</li>
+            <li>Model: {{features.graphics.model}}</li>
+            <li>Memory: {{features.graphics.memory}}</li>
+        </ul>
+        <br>
+        <hr>
+        <li><b>Ports:</b></li>
+        <br>
+        <ul>
+            {{#each features.ports}}
+            <li>{{type}} x{{count}}</li>
+
+            <ul>
+                {{#each features}}
+
+                <li>{{this}}</li>
+                {{/each}}
+                <br>
+            </ul>
+            {{/each}}
+        </ul>
+        <br>
+        <hr>
+        <li><b>Battery:</b></li>
+        <br>
+        <ul>
+            <li>Type: {{features.battery.type}}</li>
+            <li>Capacity: {{features.battery.capacity}}</li>
+            <li>Life: {{features.battery.life}}</li>
+        </ul>
+        <br>
+        <hr>
+        <li><b>Weight:</b> {{features.weight}}</li>
+        <br>
+        <hr>
+        <li><b>Dimensions:</b></li>
+        <br>
+        <ul>
+            <li>Height: {{features.dimensions.height}}</li>
+            <li>Width: {{features.dimensions.width}}</li>
+        </ul>
+        <hr>
+
+</html>

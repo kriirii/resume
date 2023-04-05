@@ -1,0 +1,77 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{{make}} {{model}}</title>
+</head>
+
+
+
+<body>
+    <div class="car-details">
+        <h2>{{make}} {{model}}</h2>
+        <p>Year: {{year}}</p>
+        <p>Color: {{color}}</p>
+    </div>
+    <hr>
+    <br>
+    <div class="interior-features">
+        <h3>Interior Features:</h3>
+        <ul>
+            <li>Seats: {{features.interior.seats.material}}, {{features.interior.seats.color}}</li>
+            <li>Dashboard: {{features.interior.dashboard.material}}, Display Type:
+                {{features.interior.dashboard.display.type}}</li>
+            <li>Audio System: {{features.interior.audio.system}},
+                Speakers: {{features.interior.audio.speakers}}</li>
+        </ul>
+    </div>
+    <br>
+
+    <div class="exterior-features">
+        <br>
+        <h3>Exterior Features:</h3>
+        <ul>
+            <li>Wheels: {{features.exterior.wheels.size}} inch,
+                {{features.exterior.wheels.type}} type</li>
+            <li>Headlights: {{features.exterior.headlights.type}}, Brightness:
+                {{features.exterior.headlights.brightness}}</li>
+            <li>Sunroof: {{features.exterior.sunroof.type}}, Size: {{features.exterior.sunroof.size}}</li>
+        </ul>
+    </div>
+
+    <div class="safety-features">
+        <br>
+        <h3>Safety Features:</h3>
+        <ul>
+            <li>Airbags: Front: {{features.safety.airbags.front}},
+                Side: {{features.safety.airbags.side}},
+                Knee:{{features.safety.airbags.knee}},
+                Rear: {{features.safety.airbags.rear}}</li>
+            <li>Assistance:
+                Blind Spot Monitoring: {{features.safety.assistance.blind_spot_monitoring}},
+                Rear Cross Traffic Alert: {{features.safety.assistance.rear_cross_traffic_alert}},
+                Lane Departure Warning:{{features.safety.assistance.lane_departure_warning}},
+                Adaptive Cruise Control:{{features.safety.assistance.adaptive_cruise_control}},
+                Collision Warning:{{features.safety.assistance.collision_warning}}</li>
+        </ul>
+    </div>
+
+    <div class="engine-details">
+        <br>
+        <h3>Engine Details:</h3>
+
+        <ul>
+            <li>Engine Type: {{engine.type}}</li>
+            <li>Displacement: {{engine.displacement}} L</li>
+            <li>Horsepower: {{engine.horsepower}} hp</li>
+            <li>Torque: {{engine.torque}} lb-ft</li>
+        </ul>
+    </div>
+</body>
+
+</html>

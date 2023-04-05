@@ -1,0 +1,76 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{{name}} - Programming Language</title>
+    <link href='css/index.css' rel='stylesheet' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+
+</head>
+<br>
+
+<body>
+    <div class="container">
+        <h1>{{name}}</h1>
+        <p>{{description}}</p>
+        <hr>
+        <h2>History</h2>
+        <ul>
+            <li>Year: {{history.year}}</li>
+            <li>Founder: {{history.founder}}</li>
+        </ul>
+        <hr>
+        <h2>Types</h2>
+        <ul>
+            {{#each types}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+        <hr>
+        <h2>Syntax</h2>
+        <ul>
+            <li>Variables: {{syntax.variables}}</li>
+            <li>Functions: {{syntax.functions}}</li>
+            <li>Conditionals: {{syntax.conditionals}}</li>
+            <li>Loops: {{syntax.loops}}</li>
+            <li>Classes: {{syntax.classes}}</li>
+        </ul>
+        <hr>
+        <h2>Features</h2>
+        <ul>
+            {{#each features}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+        <hr>
+        <h2>Libraries</h2>
+        <ul>
+            {{#each libraries}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+        <hr>
+        <h2>Tools</h2>
+        <ul>
+            {{#each tools}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+        <hr>
+        <h2>Community</h2>
+        <ul>
+            {{#each community}}
+            <li>{{name}} ({{type}})</li>
+            {{/each}}
+        </ul>
+    </div>
+</body>
+
+</html>
