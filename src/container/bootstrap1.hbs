@@ -1,0 +1,394 @@
+{{!--КАРТОЧКИ ТАБЛИЦІ І КОЛОНКИ--}}
+<main>
+
+    <div class="row gy-5"> {{!-- <main class="text-bg-warning">зафарбовує лист --}}
+            <section class="col-12">
+                <div class="card">
+                    <img class="card-img-top" src="https://picsum.photos/400/200" alt="Product photo">
+                    <div class="card-body">
+                        <h5 class="card-title">Рroduct #168943 </h5>
+                        <p>Панель ArmorStandart Air Series для Samsung</p>{{!якщо р то буде відступ}}
+                        <a href="#" class="btn btn-primary">Open</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="col-6">
+                <div class="card text-bg-primary"> {{!-- <div class="card text-bg-primary"> зафарбовує 1 і останній
+                        пункт
+                        меню з
+                        кнопкою--}}
+                        <div class="card-header">
+                            <h5>МЕНЮ:</h5>
+                        </div>
+
+                        <ul class="list-group list-group-flush text-bg-primary">
+                            <li class="list-group-item">
+                                <a href="#" class="btn btn-link">Home page</a>
+                            </li>
+                            <li class="list-group-item "> {{!--text-bg-dark для кожнонго елемента окремо
+                                --}}
+                                <a href="#" class="btn btn-link">Summary page</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#" class="btn btn-link">Skills page</a>
+                            </li>
+                        </ul>
+
+                        <div class="card-footer">
+                            <button class="btn btn-dark btn-sm">Update list</button>
+                        </div>
+                    </div>
+
+            </section>
+    </div>
+    <hr>
+    {{!--карточка з списоком --}}
+    <br>
+    <br>
+    <br>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <ul>
+                <li class="list-group-item">Item 1.1</li>
+                <li class="list-group-item">Item 1.2</li>
+            </ul>
+        </li>
+        <li class="list-group-item">Item 2</li>
+        <li class="list-group-item">Item 3</li>
+    </ul>
+    <hr>
+    {{!--меню --}}
+    <br>
+    <br>
+    <h5>МЕНЮ:</h5>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <a href="#" class="btn btn-link">Home page</a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" class="btn btn-link">Summary page</a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" class="btn btn-link">Skills page</a>
+        </li>
+    </ul>
+    <br>
+    <hr>
+    <br>
+    {{!--меню з кнопкою--}}
+    <div class="card text-bg-primary"> {{!-- <div class="card text-bg-primary"> зафарбовує 1 і останній пункт
+            меню з
+            кнопкою--}}
+            <div class="card-header">
+                <h5>МЕНЮ:</h5>
+            </div>
+
+            <ul class="list-group list-group-flush text-bg-primary">
+                <li class="list-group-item">
+                    <a href="#" class="btn btn-link">Home page</a>
+                </li>
+                <li class="list-group-item text-bg-dark"> {{!--text-bg-dark для кожнонго елемента окремо --}}
+                    <a href="#" class="btn btn-link">Summary page</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#" class="btn btn-link">Skills page</a>
+                </li>
+            </ul>
+
+            <div class="card-footer">
+                <button class="btn btn-dark btn-sm">Update list</button>
+            </div>
+        </div>
+        {{!-- Таблиця --}}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        #id
+                    </th>
+                    <th>
+                        name
+                    </th>
+                    <th>
+                        age
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>1</th> {{!-- робить жирним --}}
+                    <td>John</td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <th>2</th> {{!-- робить жирним --}}
+                    <td>Ivan</td>
+                    <td>30</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        {{!-- Таблиця з стилем--}}
+        <table class="table table-striped"> {{!-- Таблиця сіренький фон через рядок--}}
+            <thead>
+                <tr>
+                    <th>
+                        #id
+                    </th>
+                    <th>
+                        name
+                    </th>
+                    <th>
+                        age
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>1</th> {{!-- робить жирним --}}
+                    <td>John</td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <th>2</th> {{!-- робить жирним --}}
+                    <td>Ivan</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <th>1</th> {{!-- робить жирним --}}
+                    <td>John</td>
+                    <td>35</td>
+                </tr>
+            </tbody>
+        </table>
+        {{!-- Таблиця з рамкою--}}
+        <table class="table table-striped table-bordered"> {{!-- table-bordered рамка Таблиця сіренький фон
+            через
+            рядок--}}
+            <thead>
+                <tr>
+                    <th>
+                        #id
+                    </th>
+                    <th>
+                        name
+                    </th>
+                    <th>
+                        age
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>1</th> {{!-- робить жирним --}}
+                    <td>John</td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <th>2</th> {{!-- робить жирним --}}
+                    <td>Ivan</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <th>1</th> {{!-- робить жирним --}}
+                    <td>John</td>
+                    <td>35</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <hr>
+        <br>
+
+        {{!--зафарбовування--}}
+        <div class="card text-bg-dark"> {{!-- text-bg-dark зафарбовує карту --}}
+            <img class="card-img-top" src="https://picsum.photos/400/200" alt="Product photo">
+            <div class="card-body">
+                <h5 class="card-title text-bg-primary">Рroduct #168943 </h5>
+                <p class="text-bg-secondary">Панель ArmorStandart Air Series для Samsung</p>{{!якщо р то буде
+                відступ}}
+                <a href="#" class="btn btn-primary">Open</a>
+            </div>
+        </div>
+
+
+        <br>
+        {{!-- Таблиця зафарбована--}}
+        <table class="table table-bordered text-bg-success"> {{!-- table-bordered рамка Таблиця сіренький фон
+            через
+            рядок--}}
+            <thead>
+                <tr>
+                    <th>
+                        #id
+                    </th>
+                    <th>
+                        name
+                    </th>
+                    <th>
+                        age
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>1</th> {{!-- робить жирним --}}
+                    <td>John</td>
+                    <td>35</td>
+                </tr>
+                <tr>
+                    <th>2</th> {{!-- робить жирним --}}
+                    <td>Ivan</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <th>1</th> {{!-- робить жирним --}}
+                    <td>John</td>
+                    <td>35</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <hr>
+        <br>
+
+        {{!-- сторимо картку з текстом --}}
+        <div class="card">
+            <div class="card-body">This is content of our box
+                <div class="card-title">Title</div>
+            </div>
+        </div>
+        <br>
+        {{!-- сторимо картку з Заголовкаом і текстом --}}
+        <div class="card">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+                <h6 class="card-title">This is title</h6>
+                <div>This is content of our box</div>
+            </div>
+        </div>
+        <br>
+        {{!-- Зафарбуємо картку з Заголовкаом і текстом --}}
+        <div class="card text-bg-success">
+            <div class="card-header">Header</div>
+            <div class="card-body ">
+                <h6 class="card-title">This is title</h6>
+                <p>This is content of our box</p>
+                <button class="btn btn-light">click</button>
+            </div>
+        </div>
+        <br>
+        {{!-- Зафарбуємо картку з Заголовкаом і текстом додамо розмітку та footer--}}
+        <div class="card text-bg-success">
+            <div class="card-header text-center">Header</div>
+            <div class="card-body text-center">
+                <h6 class="card-title">This is title</h6>
+                <p>This is content of our box</p>
+                <button class="btn btn-light">click</button>
+            </div>
+            <div class="card-footer text-center">footer</div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        {{!--CITКА 12--}}
+        <div class="row">{{!--че горизонтально--}}
+            <div class="col-3">{{!--3 колонок з 12 можливих--}}
+                <div class="card text-bg-light">
+                    <div class="card-header text-center">Header</div>
+                    <div class="card-body text-center">
+                        <h6 class="card-title">This is title</h6>
+                        <p>This is content of our box</p>
+                        <button class="btn btn-dark">click</button>
+                    </div>
+                    <div class="card-footer text-center">footer</div>
+                </div>
+            </div>
+
+            <div class="col-3">{{!--6 колонок з 12 можливих--}}
+                <div class="card text-bg-light">
+                    <div class="card-header text-center">Header</div>
+                    <div class="card-body text-center">
+                        <h6 class="card-title">This is title</h6>
+                        <p>This is content of our box</p>
+                        <button class="btn btn-dark">click</button>
+                    </div>
+                    <div class="card-footer text-center">footer</div>
+                </div>
+            </div>
+            <div class="col-6">{{!--6 колонок з 12 можливих--}}
+                <div class="card text-bg-light">
+                    <div class="card-header text-center">Header</div>
+                    <div class="card-body text-center">
+                        <h6 class="card-title">This is title</h6>
+                        <p>This is content of our box</p>
+                        <button class="btn btn-dark">click</button>
+                    </div>
+                    <div class="card-footer text-center">footer</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <hr>
+    <br>
+    <br>
+
+
+    {{!--CITКА 12 працюємо з розривом--}}
+    <div class="row gx-5 gy-1">{{!--тут міряємо відступ g-5 загальний gx-5 gy-1 гроизонтальний вертикальний--}}
+        <div class="col-3">{{!--3 колонок з 12 можливих--}}
+            <div class="card text-bg-light">
+                <div class="card-header text-center">Header</div>
+                <div class="card-body text-center">
+                    <h6 class="card-title">This is title</h6>
+                    <p>This is content of our box</p>
+                    <button class="btn btn-dark">click</button>
+                </div>
+                <div class="card-footer text-center">footer</div>
+            </div>
+        </div>
+
+        <div class="col-3">{{!--6 колонок з 12 можливих--}}
+            <div class="card text-bg-light">
+                <div class="card-header text-center">Header</div>
+                <div class="card-body text-center">
+                    <h6 class="card-title">This is title</h6>
+                    <p>This is content of our box</p>
+                    <button class="btn btn-dark">click</button>
+                </div>
+                <div class="card-footer text-center">footer</div>
+            </div>
+        </div>
+        <div class="col-6">{{!--6 колонок з 12 можливих--}}
+            <div class="card text-bg-light">
+                <div class="card-header text-center">Header</div>
+                <div class="card-body text-center">
+                    <h6 class="card-title">This is title</h6>
+                    <p>This is content of our box</p>
+                    <button class="btn btn-dark">click</button>
+                </div>
+                <div class="card-footer text-center">footer</div>
+            </div>
+        </div>
+        <div class="col-6">{{!--6 колонок з 12 можливих--}}
+            <div class="card text-bg-light">
+                <div class="card-header text-center">Header</div>
+                <div class="card-body text-center">
+                    <h6 class="card-title">This is title</h6>
+                    <p>This is content of our box</p>
+                    <button class="btn btn-dark">click</button>
+                </div>
+                <div class="card-footer text-center">footer</div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+</main>
+
+<br>
