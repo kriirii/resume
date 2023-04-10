@@ -1,0 +1,123 @@
+<main class="p-3">
+    <div class="p-3">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                {{#each breadcrumb}}
+                {{#if url}}
+                <li class="breadcrumb-item">
+                    <a href="{{url}}">{{name}}</a>
+                </li>
+                {{else}}
+                <li class="breadcrumb-item disabled" aria-current="page">
+                    {{name}}</li>
+                {{/if}}
+                {{/each}}
+            </ol>
+        </nav>
+    </div>
+
+
+    <div class="row">
+        <div class="col-6 col-md-6">
+            <div><img src="{{productData.img}}" alt="{{productData.info.title}}" class="img-fluid"></div>
+            <div class="card text-dark p-3 my-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{productData.info.title}}</h5>
+                    <p>{{productData.info.about}}</p>
+                    <p class="display-5"><b>{{productData.info.price}}</b></p>
+                    {{#each productData.info.category}}
+                    {{#if isHot}}
+                    <button class="btn btn-warning rounded-pill btn-sm">{{name}}</button>
+                    {{/if}}
+                    {{#if isNew}}
+                    <button class="btn btn-primary rounded-pill btn-sm">{{name}}</button>
+                    {{/if}}
+                    {{#if isBonus}}
+                    <button class="btn btn-info rounded-pill btn-sm">{{name}}</button>
+                    {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <div class="col-6 ps-5">
+            <div class="row">
+                <div class="col-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>{{productData.item.head.[0]}}</th>
+                                <th>{{productData.item.head.[1]}}</th>
+                                <th>{{productData.item.head.[2]}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each productData.item.body}}
+                            <tr>
+                                <td>{{@index}}</td>
+                                <td>{{this.[1]}}</td>
+                                <td>{{this.[2]}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">{{productData.param.title}}</div>
+                        <ul class="list-group list-group-flush">
+                            {{#each productData.param.list}}
+                            <li class="list-group-item">{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 mt-5"> </div>
+            <div class="alert {{#if productData.alert.isError}}alert-danger{{else}}alert-dark{{/if}}">
+                {{#if productData.alert.isError}}
+                <span
+                    class="badge text-bg-waring rounded-pill text-uppercase text-danger">{{productData.alert.text}}</span>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <p class="display-5 text-center"><b> {{goodsOtherBlock.title}}</b></p>
+    <div class="row g-3">
+        {{#each goodsOtherBlock.cards}}
+        <div class="col-4">
+            <div class="card">
+                <img class="card-img-top" src="{{image}}" alt="{{title}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    {{#if isHot}}
+                    <button class="btn btn-danger rounded-pill mx-1 my-1 ms-0">Hot</button>
+                    {{/if}}
+                    {{#if isNew}}
+                    <button class="btn btn-success rounded-pill mx-2 my-1 ms-0">New</button>
+                    {{/if}}
+                    <p>{{description}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <div class="mt-4 p-2">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{productData.actionList.name}}</h5>
+                {{#each productData.actionList}}
+                <button type="button"
+                    class="btn {{#if this.isSuccess}}btn-success{{/if}}{{#if this.isWarning}}btn-warning text-white{{/if}}{{#if this.isError}}btn btn-outline-danger{{/if}}{{#if this.isGood}}btn btn-outline-primary{{/if}} ms-2">{{this.name}}</button>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+</main>

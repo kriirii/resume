@@ -4,64 +4,97 @@
 --}}
 <!DOCTYPE html>
 <html>
+<main class="p-3">
 
-<h1>{{name}}</h1>
-<hr>
-<h2>Users:</h2>
-<ul>
-    {{#each users}}
-    <ol>
-        <b>{{this.name}}</b> ({{this.gender}}, {{this.age}} years old)
-    </ol>
-
-    <hr>
-    {{#if this.friends.length}}
-    <h3>Friends:</h3>
-    <ul>
-        {{#each this.friends}}
-        <ol> {{this.name}} ({{this.gender}},
-            {{this.age}} years old)
-        </ol>
-        <br>
-        <ol>
-            {{#if this.mutual_friends.length}}
-        </ol>
-        <br>
-
-        <ol><b>Mutual friends:</b></ol>
+    <body>
+        <h1>{{name}}</h1>
+        <hr>
         <br>
         <ul>
+            {{#each users}}
+            <li>
+                <mark> <b>{{name}} ({{gender}}, {{age}} years old) </b></mark>
+                <hr>
+                <ul>
+                    {{#each friends}}
+                    <br>
+                    <li><b>{{name}} </b>({{gender}}, {{age}} years old)</li>
 
-            {{#each this.mutual_friends}}
+                    {{#if mutual_friends}}
+                    <hr>
+                    <ul>
+                        {{#each mutual_friends}}
 
-            <p>{{this.name}} ({{this.gender}}, {{this.age}} years old)</p>
+                        <li>{{name}} ({{gender}}, {{age}} years old)</li>
+                        <ul>
+                            {{#each mutual_friends}}
+                            <p>
+                                <li><small>{{name}} ({{gender}}, {{age}} years old)
+                                </li>
+                                </small>
+                            </p>{{/each}}
+                        </ul>
+                        <hr>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+            </li>
+
+
+
+            {{#each groups}}
+            <br>
+            <b>
+                <p><mark>{{name}}</mark></p>
+            </b>
+            <ul>
+                <p>{{description}}</p>
+            </ul>
+            <br>
+
+
+            {{#each members}}
+
+            <li><b>{{name}} </b>({{gender}}, {{age}} years old)
+            </li>
+            {{/each}}
             {{/each}}
         </ul>
-        {{/if}}
+
+        {{/each}}
+
+
         </li>
         {{/each}}
-    </ul>
-    {{/if}}
-    <hr>
+        </ul>
+        <br>
+        <br>
+        <br>
+        {{#each users}}
 
-    {{#if this.groups.length}}
-    <h3>Groups:</h3>
-    <br>
-    <ul>
-        {{#each this.groups}}
+        {{#each groups}}
+
+        <li><mark><b>{{name}}</li></mark></b>
         <br>
-        <b>{{this.name}}</b>- {{this.description}}<br>
-        {{#if this.members.length}}
-        <b>Members:</b>
-        <br>
-        {{#each this.members}}
-        {{this.name}}<br>({{this.gender}},{{this.age}} years old)
-        {{/each}} <br>
-        {{/if}}
+        <ul>
+            <p>{{description}}</p>
+            <ul>
+                {{#each members}}
+                <li><b>{{name}} </b>({{gender}}, {{age}} years old)
+                </li>
+                <br>
+                {{/each}}
+            </ul>
+            </li>
+            {{/each}}
+        </ul>
+        </li>
         {{/each}}
-    </ul>
+        </ul>
+        {{#each users}}
+        {{/each}}
 
-    {{/if}}
-    {{/each}}
+    </body>
+</main>
 
-</ul>
+</html>

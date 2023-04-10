@@ -1,0 +1,84 @@
+<main class="p-3">
+    <div class="pt-5 pb-2">
+        <h2 class="text-center">{{newsBlock.title}}</h2>
+    </div>
+    <div class="row g-4">
+        {{#each newsBlock.cards}}
+        <div class="col-3 row-4">
+            <div class="card text-bg-dark">
+                <div class="card-header">{{title}}
+                    {{#if isTop}}
+                    <button class="btn btn-danger rounded-pill mx-5 my-3 ms-0">Top</button>
+                    {{/if}}
+                    {{#if isNew}}
+                    <button class="btn btn-success rounded-pill mx-2 my-3 ms-0">New</button>
+                    {{/if}}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p>{{description}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    <hr>
+    <br>
+
+    <div class="row">
+        <div class="col-12">
+            <ul class="nav nav-tabs">
+                {{#each goodsBlock.tabs}}
+                <li class="nav-item">
+                    <a href="#" class="nav-link 
+                        {{#if isActive}}active{{/if}}
+                        {{#if isDisabled}}disabled{{/if}}" {{#if isDisabled}}aria-disabled="true" {{/if}}>
+                        {{text}}
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row g-3">
+        {{#each goodsBlock.cards}}
+        <div class="col-4">
+            <div class="card">
+                <img class="card-img-top" src="{{image}}" alt="{{title}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    {{#if isHot}}
+                    <button class="btn btn-danger rounded-pill mx-1 my-1 ms-0">Hot</button>
+                    {{/if}}
+                    {{#if isNew}}
+                    <button class="btn btn-success rounded-pill mx-2 my-1 ms-0">New</button>
+                    {{/if}}
+                    <p>{{description}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <hr>
+    <div class="p-2">
+        <div class="col-12 mt-5">
+            <div class="pb-4">
+                <div class="card card-body bg-dark text-light">
+                    <h2 class="mb-1">{{subscribe.header}}
+                        <div class="float-end">
+                            {{#each subscribe.buttons}}
+                            <a href="{{link}}" class="btn btn-primary rounded-1">{{text}}</a>
+                            {{/each}}
+                        </div>
+                        <span class="badge bg-warning rounded-pill text-uppercase">{{subscribe.badge}}</span>
+                    </h2>
+                    <p class="m-1">{{subscribe.description}}</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+</main>

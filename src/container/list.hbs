@@ -1,0 +1,58 @@
+<div>
+    <ul>
+        {{#each list}}
+        <li>
+            {{#if @first }} <button>{{name}}</button> {{/if}}
+            {{!-- кнопка якщо перший елемент --}}
+            {{#if @last }} <button>{{name}}</button> {{/if}}
+            {{!-- кнопка якщо останній елемент --}}
+            <span>{{name}}</span>
+        </li>
+        {{/each}}
+    </ul>
+</div>
+<div>
+    <ul>
+        {{#each list}}
+        <li>
+            <button {{#if @last }}disabled{{/if}}>{{name}}</button>
+        </li> {{!-- кнопка остання не активна --}}
+        {{/each}}
+    </ul>
+</div>
+
+<div>
+    <ul>
+        {{#each list}}
+        <li>
+            <button {{#if @last }}disabled{{/if}}>{{name}}-{{@index}}</button>
+        </li> {{!-- Порядковий номер з 0 кнопка остання не активна --}}
+        {{/each}}
+    </ul>
+</div>
+
+
+<div>
+    <ul>
+        {{#each user}}
+        <li>
+            {{this}}
+
+        </li>
+        {{/each}}
+    </ul>
+</div>
+<div>
+    <ul>
+        {{#each user1}}
+        <li>
+            {{@key}}:
+            {{#if value}}
+            {{value}}
+            {{else}}
+            {{text}}
+            {{/if}}
+        </li>
+        {{/each}}
+    </ul>
+</div>
