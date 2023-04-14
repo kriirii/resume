@@ -49,47 +49,51 @@
                             <div class="col-3">
                                 <div class="card-body">
                                     <p class="card-title">{{number}}</p>
+                                    <p class="card-text"><b>{{status}}</b></p>
                                 </div>
                             </div>
-                            <div class="col-1">
-                                <div class="card-body d-flex justify-content-center">
-                                    <p class="card-text">{{status}}</p>
-                                </div>
-                            </div>
+
                             <div class="col-2">
-                                <div class="card-body d-flex justify-content-center">
-                                    <p class="card-text">{{amount.value}}</p>
+                                <div class="card-body ">
+                                    <p class="card-text">{{amount.title}}:</p>
+                                    <p class="card-text"><b>{{amount.value}}</b></p>
                                 </div>
                             </div>
-                            {{#if images.[0]}}
-                            <div class="col-1">
-                                <div class="card-body d-flex justify-content-center">
-                                    <img src="{{images.[0]}}" class="img-fluid rounded-start" alt="{{number}}">
+                            <div class="col-5 p-1">
+                                <div class="d-flex justify-content-between">
+                                    {{#if images.[0]}}
+                                    <div class="col-4 m-1">
+                                        <div>
+                                            <img src="{{images.[0]}}" class="img-fluid rounded-start rounded-end"
+                                                alt="{{number}}">
+                                        </div>
+                                    </div>
+                                    {{/if}}
+                                    {{#if images.[1]}}
+                                    <div class="col-4 m-1">
+
+                                        <div>
+                                            <img src="{{images.[1]}}" class="img-fluid rounded-start rounded-end"
+                                                alt="{{number}}">
+                                        </div>
+                                    </div>
+                                    {{/if}}
+                                    {{#if images.[2]}}
+                                    <div class="col-4 m-1">
+                                        <div>
+                                            <img src="{{images.[2]}}" class="img-fluid rounded-start rounded-end"
+                                                alt="{{number}}">
+                                        </div>
+                                    </div>
+                                    {{/if}}
                                 </div>
                             </div>
-                            {{/if}}
-                            {{#if images.[1]}}
-                            <div class="col-1">
-                                <div class="card-body d-flex justify-content-center">
-                                    <img src="{{images.[1]}}" class="img-fluid rounded-start" alt="{{number}}">
-                                </div>
-                            </div>
-                            {{/if}}
-                            {{#if images.[2]}}
-                            <div class="col-1">
-                                <div class="card-body d-flex justify-content-center">
-                                    <img src="{{images.[2]}}" class="img-fluid rounded-start" alt="{{number}}">
-                                </div>
-                            </div>
-                            {{/if}}
-                            <div class="col-3">
+                            <div class="col-2 mt-3">
                                 <div class="card-body d-flex justify-content-end align-items-center">
                                     <a href="{{button.link}}"
                                         class="btn btn-{{#if button.isPrimary}}primary{{else}}secondary{{/if}}">{{button.text}}</a>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -97,30 +101,6 @@
             </div>
             <hr>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         {{!-- особиста інформація --}}
@@ -135,16 +115,16 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <p class="card-text">{{userInfo.profileData.fullName.surname.title}}:
-                                        {{userInfo.profileData.fullName.surname.value}}</p>
+                                    <p class="card-text">{{userInfo.profileData.fullName.surname.title}}:</p>
+                                    <p><b>{{userInfo.profileData.fullName.surname.value}}</b></p>
                                 </div>
                                 <div class="col-md-4">
-                                    <p class="card-text">{{userInfo.profileData.fullName.name.title}}:
-                                        {{userInfo.profileData.fullName.name.value}}</p>
+                                    <p class="card-text">{{userInfo.profileData.fullName.name.title}}:</p>
+                                    <p><b>{{userInfo.profileData.fullName.name.value}}</b></p>
                                 </div>
                                 <div class="col-md-4">
-                                    <p class="card-text">{{userInfo.profileData.fullName.middleName.title}}:
-                                        {{userInfo.profileData.fullName.middleName.value}}</p>
+                                    <p class="card-text">{{userInfo.profileData.fullName.middleName.title}}:</p>
+                                    <p><b>{{userInfo.profileData.fullName.middleName.value}}</b></p>
                                 </div>
                             </div>
                         </div>
@@ -154,16 +134,16 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <p class="card-text">{{userInfo.profileData.otherInfo.birthday.title}}:
-                                        {{userInfo.profileData.otherInfo.birthday.value}}</p>
+                                    <p class="card-text">{{userInfo.profileData.otherInfo.birthday.title}}:</p>
+                                    <p><b>{{userInfo.profileData.otherInfo.birthday.value}}</b></p>
                                 </div>
                                 <div class="col-md-4">
-                                    <p class="card-text">{{userInfo.profileData.otherInfo.sex.title}}:
-                                        {{userInfo.profileData.otherInfo.sex.value}}</p>
+                                    <p class="card-text">{{userInfo.profileData.otherInfo.sex.title}}:</p>
+                                    <p><b> {{userInfo.profileData.otherInfo.sex.value}}</b></p>
                                 </div>
                                 <div class="col-md-4">
-                                    <p class="card-text">{{userInfo.profileData.otherInfo.language.title}}:
-                                        {{userInfo.profileData.otherInfo.language.value}}</p>
+                                    <p class="card-text">{{userInfo.profileData.otherInfo.language.title}}:</p>
+                                    <p><b> {{userInfo.profileData.otherInfo.language.value}}</b></p>
                                 </div>
                             </div>
                         </div>
@@ -176,7 +156,7 @@
                                 {{#each userInfo.buttons}}
                                 <div class="col-md-4">
                                     <a href="{{link}}"
-                                        class="btn btn-{{#if isPrimary}}primary{{/if}}{{#if isSecondary}}secondary{{/if}}{{#if isDanger}}danger{{/if}}">{{text}}</a>
+                                        class="btn btn-{{#if isPrimary}}primary{{/if}}{{#if isSecondary}}btn btn-outline-secondary{{/if}}{{#if isDanger}}btn btn-outline-danger{{/if}}">{{text}}</a>
                                 </div>
                                 {{/each}}
                             </div>
