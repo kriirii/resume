@@ -1,0 +1,139 @@
+<main class="p-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>{{header.title}}</h2>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <a href="{{header.button.link}}" class="btn btn-outline-secondary">{{header.button.text}}</a>
+            </div>
+        </div>
+    </div>
+    <hr>
+    {{!-- тут виведемо зображення товарів та інфу--}}
+
+    <div class="container">
+        <div class="row">
+            {{#each goodsBlock}}
+            <div class="col-md-12">
+                <div class="card mb-3">
+                    <div class="row p-3">
+                        <div class="col-md-2">
+                            <img src="{{this.image}}" class="card-img-top" alt="{{this.name}}">
+                        </div>
+                        <div class="col-md-10">
+                            <div class="row p-3">
+                                <div class="col-md-4">
+                                    <h5 class="card-title">{{this.name}}</h5>
+                                    <p class="card-text">{{this.description}}</p>
+                                </div>
+                                <div class="col-md-3 text-end">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p class="fw-bold">{{this.price.title}}:</p>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <p>{{this.price.value}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 text-end">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>{{this.amount}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 justify-content-end">
+                                    <div class="row">
+                                        {{#each this.buttons}}
+                                        <div class="col-md-12 mb-3">
+                                            <button
+                                                class="btn {{#if this.isPrimary}}btn-primary{{else}}btn btn-outline-danger{{/if}}">{{this.text}}</button>
+                                        </div>
+                                        {{/each}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+        <hr>
+        {{!-- тут виведемо сумму замовлених товарів--}}
+
+        <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row p-3 mb-6">
+                                <h5 class="card-title">{{total.title}}</h5>
+                                <div class="col-md-8">
+                                    <div class="row">
+                                        <div class="col-md-6 fw-bold">{{total.amount}}
+                                            <p>{{total.delivery}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mt-3 d-block text-end">
+                                    {{#each total.buttons}}
+                                    {{#if @index}}
+                                    {{/if}}
+                                    <a href="{{this.link}}"
+                                        class="btn mb-3 {{#if this.isSuccess}}btn-success{{else}}btn-outline-secondary{{/if}} {{#if this.isOutline}}btn-outline-secondary{{/if}}">
+                                        {{this.text}}</a>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+        {{!-- тут виведемо Iнші товари--}}
+
+        <div class="container other-products-block mt-4">
+            <h2 class="text-center">{{goodsOtherBlock.title}}</h2>
+            <div class="row mt-3">
+                {{#each goodsOtherBlock.cards}}
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{{image}}" alt="{{title}}">
+                        <div class="card-body">
+                            <h3>{{title}}
+                                {{#if isHot}}<button class="btn btn-warning text-white">Hot</button>{{/if}}
+                                {{#if idNew}}<button class="btn btn-primary text-white">New</button>{{/if}}
+                            </h3>
+                            <p>{{description}}</p>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            <hr>
+        </div>
+        {{!-- тут виведемо SUBSCRIBE товари--}}
+        <div class="p-2">
+            <div class="col-12 mt-5">
+                <div class="pb-3">
+                    <div class="card card-body bg-dark text-light">
+                        <h2 class="mb-1">{{subscribe.header}}
+                            <div class="float-end">
+                                {{#each subscribe.buttons}}
+                                <a href="{{link}}" class="btn btn-primary rounded-1">{{text}}</a>
+                                {{/each}}
+                            </div>
+                            <span class="badge bg-warning rounded-pill text-uppercase">{{subscribe.badge}}</span>
+                        </h2>
+                        <p class="m-1">{{subscribe.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
