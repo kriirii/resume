@@ -1,0 +1,225 @@
+<main class="p-5">
+    <h1>hello<i class="bi bi-emoji-smile"></i>
+    </h1>
+    <button class="btn btn-dark">
+        <i class="bi bi-emoji-smile"></i></button>
+
+    <div>
+        <i class="fa-solid fa-user" style="color: #1465f0;"></i>
+    </div>
+    <hr>
+    <br>
+
+    <div>
+        <img src="/public/svg/slack.svg">
+    </div>
+    <hr>
+    <br>
+    <div>
+        <img src="/svg/slack.svg">
+    </div>
+    <hr>
+    <br>
+    <svg width="20px" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+        <path
+            d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z" />
+    </svg>
+    <hr>
+    <br>
+
+
+
+
+
+
+    <div class="row g-5">
+        {{!-- список з галочками --}}
+        <div class="col-12">
+            <label class="form-label">Select food</label>
+
+            <div class="form-check">
+                <label class="form-check-label">Apple</label>
+                <input name="food" type="checkbox" class="form-heck-input">
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">Orange</label>
+                <input name="food" type="checkbox" class="form-heck-input">
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">Banana</label>
+                <input name="food" type="checkbox" class="form-heck-input">
+            </div>
+
+        </div>
+        {{!-- лише один пункт точечка --}}
+        <div class="col-12">
+            <label class="form-label">Select food</label>
+
+            <div class="form-check">
+                <label class="form-check-label">Apple</label>
+                <input name="food" type="radio" class="form-heck-input">
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">Orange</label>
+                <input name="food" type="radio" class="form-heck-input">
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">Banana</label>
+                <input name="food" type="radio" class="form-heck-input">
+            </div>
+
+        </div>
+        {{!-- перемикач --}}
+        <div class="col-12">
+            <label class="form-label">Select food</label>
+
+            <div class="form-check form-switch">
+                <label class="form-check-label">Apple</label>
+                <input name="food" type="checkbox" class="form-heck-input">
+            </div>
+            <div class="form-check form-switch">
+                <label class="form-check-label">Orange</label>
+                <input name="food" type="checkbox" class="form-heck-input">
+            </div>
+            <div class="custom-control custom-switch">
+                <input type="checkboox" class="custom-control-input" id="customSwith1">
+                <label class="custom-control-label" for="customSwith1">
+                    Toggle this switch element</label>
+            </div>
+        </div>
+    </div>
+</main>
+<main class="p-5">
+    <div class="row g-5">
+
+
+
+        <br>
+        <hr>
+        <br>
+        {{!-- Вмпливаючий список --}}
+        <div class="col-12">
+            <label class="form-label">Email address</label>
+            <input class="form-control">
+            <div class="form-text text-danger">Error, You need to set correct email</div>
+        </div>
+        <div class="col-12">
+            <label class="form-label">Select role</label>
+            <select class="form select form-select-lg">
+                <option selected>Open list</option>
+                <option value="1">admin</option>
+                <option value="2">user</option>
+            </select>
+        </div>
+
+
+
+
+
+
+
+
+
+        <hr>
+
+
+        <div class="col-12">
+            <div class="row">
+                <div class="col-2 pt-1">
+                    <label class="form-label">Email address</label>
+                </div>
+                <div class="col-2">
+                    <input class="form-control form-control-sm">
+                </div>
+                <div class="col-2">
+                </div>
+                <div class="col-8 ps-5">
+                    <div class="form-text text-danger">Error, You need to set correct email</div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="col-12">
+            <label class="form-label">Email address</label>
+            <div class="row">
+                <div class="col-2"> {{!--розмір--}}
+                    <input type="color" class="form-control">
+                    {{!--зафарбовує --}}
+                </div>
+                <div class="col-2"> {{!--розмір--}}
+                    <input type="color" class="form-control">
+                    {{!--зафарбовує --}}
+                </div>
+            </div>
+            <div class="form-text text-danger">Error, You need to set correct email</div>
+        </div>
+        <div class="col-12">
+            <label class="form-label">Email address</label>
+            <input type="color" class="form-control">
+            {{!--зафарбовує --}}
+
+            <div class="form-text text-danger">Error, You need to set correct email</div>
+        </div>
+        <div class="col-12">
+            <label class="form-label">Email address</label>
+            <input class="form-control">
+            {{!-- створює рамку для поля вводу --}}
+            <div class="form-text text-danger">Error, You need to set correct email</div>
+            {{!-- текст підказка що саме не так червоний --}}
+        </div>
+        <div class="col-12">
+            <label class="form-label">Email address</label>
+            <input class="form-control">
+            {{!-- створює рамку для поля вводу --}}
+            <div class="form-text text-danger">Error, You need to set correct email</div>
+            {{!-- текст підказка що саме не так червоний --}}
+        </div>
+        <div class="col-12">
+            <label class="form-label">Email address</label>
+            <input disabled class="form-control">
+            {{!-- створює рамку для поля вводу --}}
+            <div class="form-text text-danger">Error, You need to set correct email</div>
+            {{!-- текст підказка що саме не так червоний --}}
+        </div>
+    </div>
+    {{!-- інший варіант --}}
+    <div class="">
+        <div class="mb-5">
+            <label class="form-label">Email address</label>
+            <input class="form-control">
+            {{!-- створює рамку для поля вводу --}}
+            <div class="form-text text-danger">Error, You need to set correct email</div>
+            {{!-- текст підказка що саме не так червоний --}}
+        </div>
+        <div class="mb-5">
+            <label class="form-label">Email address</label>
+            <input class="form-control">
+            {{!-- створює рамку для поля вводу --}}
+            <div class="form-text text-danger">Error, You need to set correct email</div>
+            {{!-- текст підказка що саме не так червоний --}}
+        </div>
+
+        <label class="form-label">Email address</label>
+        <input class="form-control">
+        {{!-- створює рамку для поля вводу --}}
+        <div class="form-text text-danger">Error, You need to set correct email</div>
+        {{!-- текст підказка що саме не так червоний --}}
+    </div>
+
+
+
+
+</main>
