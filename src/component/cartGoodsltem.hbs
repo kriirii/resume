@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        {{#each goodsBlock}}
+        <div class="col-md-12">
+            <div class="card mb-3">
+                <div class="row p-3">
+                    <div class="col-md-2">
+                        <img src="{{this.image}}" class="card-img-top" alt="{{this.name}}">
+                    </div>
+                    <div class="col-md-10">
+                        <div class="row p-3">
+                            <div class="col-md-4">
+                                <h5 class="card-title">{{this.name}}</h5>
+                                <p class="card-text">{{this.description}}</p>
+                            </div>
+                            <div class="col-md-3 text-end">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p class="fw-bold">{{this.price.title}}:</p>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <p>{{this.price.value}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 text-end">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p>{{this.amount}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 justify-content-end">
+                                <div class="row">
+                                    {{#each this.buttons}}
+                                    <div class="col-md-12 mb-3">
+                                        <button
+                                            class="btn {{#if this.isPrimary}}btn-primary{{else}}btn btn-outline-danger{{/if}}">{{this.text}}</button>
+                                    </div>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
