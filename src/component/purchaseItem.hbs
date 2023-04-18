@@ -1,0 +1,61 @@
+<div class="container mt-2">
+    <div class="row">
+        {{#each purchase.itemList}}
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="row g-0">
+                    <div class="col-3">
+                        <div class="card-body">
+                            <p class="card-title">{{number}}</p>
+                            <p class="card-text"><b>{{status}}</b></p>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <div class="card-body ">
+                            <p class="card-text">{{amount.title}}:</p>
+                            <p class="card-text"><b>{{amount.value}}</b></p>
+                        </div>
+                    </div>
+                    <div class="col-5 p-1">
+                        <div class="d-flex justify-content-between">
+                            {{#if images.[0]}}
+                            <div class="col-4 m-1">
+                                <div>
+                                    <img src="{{images.[0]}}" class="img-fluid rounded-start rounded-end"
+                                        alt="{{number}}">
+                                </div>
+                            </div>
+                            {{/if}}
+                            {{#if images.[1]}}
+                            <div class="col-4 m-1">
+
+                                <div>
+                                    <img src="{{images.[1]}}" class="img-fluid rounded-start rounded-end"
+                                        alt="{{number}}">
+                                </div>
+                            </div>
+                            {{/if}}
+                            {{#if images.[2]}}
+                            <div class="col-4 m-1">
+                                <div>
+                                    <img src="{{images.[2]}}" class="img-fluid rounded-start rounded-end"
+                                        alt="{{number}}">
+                                </div>
+                            </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class="col-2 mt-3">
+                        <div class="card-body d-flex justify-content-end align-items-center">
+                            <a href="{{button.link}}"
+                                class="btn btn-{{#if button.isPrimary}}primary{{else}}secondary{{/if}}">{{button.text}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <hr>
+</div>
